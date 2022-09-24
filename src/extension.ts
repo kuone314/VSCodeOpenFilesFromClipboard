@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export function activate(context: vscode.ExtensionContext) {
 
-	let disposable = vscode.commands.registerCommand('open-by-clipboard.helloWorld', async () => {
+	let disposable = vscode.commands.registerCommand('open-files-from-clipboard', async () => {
 		const orgStr = await vscode.env.clipboard.readText();
 		const pathAry = orgStr.split(/\r\n|\n/);
 		const classfied = await classfyPathAry(pathAry);

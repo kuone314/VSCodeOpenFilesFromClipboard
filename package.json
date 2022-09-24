@@ -10,14 +10,14 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:open-by-clipboard.helloWorld"
+        "onCommand:open-files-from-clipboard"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "open-by-clipboard.helloWorld",
-				"title": "Hello World"
+				"command": "open-files-from-clipboard",
+				"title": "Open files from clipboard."
 			}
 		]
 	},
