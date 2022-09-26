@@ -5,6 +5,7 @@
 	"version": "0.0.1",
 	"repository": "https://github.com/kuone314/VSCodeOpenFilesFromClipboard",
 	"publisher": "kuone",
+  "icon": "doc/icon.png",
 	"engines": {
 		"vscode": "^1.71.0"
 	},
