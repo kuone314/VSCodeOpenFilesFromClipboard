@@ -8,19 +8,19 @@ export function activate(context: vscode.ExtensionContext) {
 		const pathAry = orgStr.split(/\r\n|\n/);
 		const classfied = await classfyPathAry(pathAry);
 
-		if (classfied.unfounds.length !== 0){
+		if (classfied.unfounds.length !== 0) {
 			vscode.window.showErrorMessage(infoMessage(classfied.unfounds));
 		}
 
-		for(const filePath of classfied.files){
+		for (const filePath of classfied.files) {
 			const fileUri = vscode.Uri.file(filePath)
 			vscode.commands.executeCommand('vscode.open', fileUri, {
 				preview: false,
-				preserveFocus: true,
+				preserveFocus: false,
 			});
 		}
 
-		for(const dirPath of classfied.dirs){
+		for (const dirPath of classfied.dirs) {
 			const fileUri = vscode.Uri.file(dirPath);
 			vscode.commands.executeCommand('vscode.openFolder', fileUri, true);
 		}
@@ -29,7 +29,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposable);
 }
 
-export function deactivate() {}
+export function deactivate() { }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 interface ClassfiedPathAry {
@@ -45,7 +45,7 @@ async function classfyPathAry(pathAry: string[]): Promise<ClassfiedPathAry> {
 
 		let fileState;
 		try {
-			 fileState = await vscode.workspace.fs.stat(vscode.Uri.file(path));
+			fileState = await vscode.workspace.fs.stat(vscode.Uri.file(path));
 		} catch (e) {
 			result.unfounds.push(path);
 			continue;
