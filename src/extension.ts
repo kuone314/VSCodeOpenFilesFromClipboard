@@ -5,7 +5,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	let disposable = vscode.commands.registerCommand('open-files-from-clipboard', async () => {
 		const orgStr = await vscode.env.clipboard.readText();
-		const pathAry = orgStr.split(/\r\n|\n/);
+		const pathAry = orgStr.split(/\r\n|\n/).map(str => str.trim());
 		const classfied = await classfyPathAry(pathAry);
 
 		if (classfied.unfounds.length !== 0) {
