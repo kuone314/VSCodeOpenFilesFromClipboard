@@ -2,7 +2,7 @@
   "name": "open-by-clipboard",
 	"displayName": "Open files by clipboard",
 	"description": "Open file(s), from copied text.",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"repository": "https://github.com/kuone314/VSCodeOpenFilesFromClipboard",
 	"publisher": "kuone",
   "icon": "doc/icon.png",
